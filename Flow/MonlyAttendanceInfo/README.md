@@ -2,7 +2,7 @@ English | MonlyattendanceInfo Flow
 📌 Flow Type
 Scheduled Cloud Flow — Runs on the 3rd day of every month
 
-📋 Description
+📋 Description:
 This Power Automate Flow automatically collects and aggregates employee attendance data from multiple SharePoint lists, then compiles a monthly summary sheet used by HR and payroll for salary calculations.
 
 📊 Output Fields
@@ -20,7 +20,7 @@ Leave Type (休暇種別)
 
 Leave Days (休暇日数)
 
-⚙️ Main Features
+⚙️ Main Features:
 🗂️ Automatically extracts data from multiple SharePoint lists
 
 📆 Compiles employee working hours by converting from daily records to total hours
@@ -29,7 +29,7 @@ Leave Days (休暇日数)
 
 📤 Generates a monthly output file or list used by HR
 
-⚠️ Challenges
+⚠️ Challenges:
 ⏱️ Converting daily records to total hours — Workdays must be accurately converted, especially part-time cases
 
 📉 Leave type processing — The system must:
@@ -44,7 +44,7 @@ Avoid rounding errors for partial leaves
 
 🔐 Access Control — Ensuring flow permissions cover all SharePoint sources
 
-🚀 How to Use
+🚀 How to Use:
 Import the Flow zip file: MonlyattendanceInfo_*.zip
 
 Reconnect your SharePoint lists as data sources
