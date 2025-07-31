@@ -1,155 +1,165 @@
------English Introduction-------
+English | MonlyattendanceInfo Flow
+📌 Flow Type
+Scheduled Cloud Flow — Runs on the 3rd day of every month
 
-📌 Flow Name: 
-MonlyAttendanceInfo
+📋 Description
+This Power Automate Flow automatically collects and aggregates employee attendance data from multiple SharePoint lists, then compiles a monthly summary sheet used by HR and payroll for salary calculations.
 
-📋 Project Overview
-This is a Microsoft Power Automate Flow designed to automatically notify employees of their monthly attendance summary via email. It helps streamline HR communication and improve transparency in attendance management.
+📊 Output Fields
+Name (名前)
 
-This project serves as a practical showcase of Power Platform automation capabilities, especially suitable for HR tools or attendance notification systems.
+Total Working Hours (総工時)
 
-✅ Key Features
-⏰ Scheduled monthly execution (e.g., every 1st day of the month at 9:00 AM)
+Weekend Overtime (週末残業)
 
-📤 Sends automated emails to employees
+Commuter Pass Cost (定期券費用)
 
-📎 Email content includes dynamic attendance data such as total workdays, late arrivals, and absences
+Commuter Route Info (定期区間)
 
-🔗 Can connect to data sources such as SharePoint, Excel Online, Dataverse, etc.
+Leave Type (休暇種別)
 
-🧩 Modular and easy to reuse in other environments
+Leave Days (休暇日数)
 
-🧑‍💻 How to Use
-1. Import the Flow into Power Automate
-Go to Power Automate
+⚙️ Main Features
+🗂️ Automatically extracts data from multiple SharePoint lists
 
-On the left menu, click My Flows → Import
+📆 Compiles employee working hours by converting from daily records to total hours
 
-Upload the file MonlyAttendanceInfo_20250731060314.zip
+🌴 Introduces leave type classification, converting hours to leave days
 
-Reconfigure the required connections (e.g., Outlook, SharePoint, Excel)
+📤 Generates a monthly output file or list used by HR
 
-Set the recipient field to pull dynamically from employee email data
+⚠️ Challenges
+⏱️ Converting daily records to total hours — Workdays must be accurately converted, especially part-time cases
 
-2. Configure the Recurrence Trigger
-Recommended: Run on the 1st of every month at 9:00 AM
+📉 Leave type processing — The system must:
 
-You can modify the frequency based on your business needs (e.g., biweekly or end-of-month)
+Identify which type of leave (e.g. vacation, sick, personal)
 
-3. Example Email Output
-yaml
-Copy
-Edit
-Subject: Your Attendance Report for This Month
+Convert hours to days (rounding rules: e.g. 4 hours → 0.5 days)
 
-Dear John,
+Avoid rounding errors for partial leaves
 
-Here is your attendance summary for July 2024:
-- Days Present: 20
-- Times Late: 2
-- Days Absent: 1
+🗃️ Multi-source integration — Merging multiple SharePoint lists with different structures
 
-Please contact HR if you have any questions.
-🌐 Tech Stack
-Technology	Purpose
-Power Automate	Flow automation
-Outlook Connector	Send emails
-SharePoint / Excel / Dataverse	Data source
+🔐 Access Control — Ensuring flow permissions cover all SharePoint sources
 
-📁 Repository Structure
-python
-Copy
-Edit
-Flow/
-├── MonlyAttendanceInfo_20250731060314.zip   # Exported Power Automate Flow
-└── README.md                                # Project description (this file)
-📈 Highlights
-Built entirely via low-code, visual logic
+🚀 How to Use
+Import the Flow zip file: MonlyattendanceInfo_*.zip
 
-Automates a real-world HR task with practical business value
+Reconnect your SharePoint lists as data sources
 
-Easy to import/export and reuse across environments
+Schedule the flow to run monthly on the 3rd
 
-🧠 Reflections & Future Improvements
-Current version uses a static email body; future upgrades could dynamically generate personalized PDF reports
+Output can be saved to Excel Online, Dataverse, or a SharePoint report list
 
-Can be integrated with Power Apps to allow employees to apply for leave or view their attendance in real time
+--------------------------------------------------------------------------------
 
+中文 | MonlyattendanceInfo 出勤整合流程
+📌 流程类型
+定时云流 — 每月 3 日自动执行
 
+📋 功能说明
+该流程从多个 SharePoint 列表中提取员工出勤数据，计算整合后，生成用于 HR 发薪参考的 月度总表。
 
+📊 输出字段
+员工姓名
 
+总工时
 
-------中文简介-------
+周末加班时数
 
-📌 Flow 名称：MonlyAttendanceInfo
-📋 项目简介
-本 Flow 为 Microsoft Power Automate 上开发的自动化流程，旨在每月自动向员工发送个人出勤记录通知，帮助员工及时了解自己的出勤情况，提高人事沟通效率。
+定期券费用
 
-本项目适合作为展示 Microsoft Power Platform 自动化技能的实际案例，适用于 HR 系统、考勤提醒系统等。
+定期通勤区间
 
-✅ 主要功能功能点
-⏰ 每月定时触发（如每月 1 日上午 9:00）
+休假种类
 
-📤 自动发送邮件通知给员工
+休假日数
 
-📎 邮件正文中包含其当月的考勤摘要（例如：出勤天数、迟到次数、缺勤天数等）
+⚙️ 功能亮点
+自动抓取多个 SharePoint 表格的数据
 
-📊 数据来源可以连接 SharePoint、Excel Online、Dataverse 或其他系统（视情况配置）
+将每天的打卡或工时数据转换为整月总工时
 
-🧩 模块化设计，便于迁移或复用
+新增休假种类字段，根据休假类型转换小时为休假“日数”
 
-🧑‍💻 使用说明
-1. 导入此 Flow 到你的环境
-打开 Power Automate 官网：https://flow.microsoft.com
+输出一份 HR 可直接使用的月度考勤表
 
-点击左侧栏的 “My flows” → “Import”
+⚠️ 实现难点
+⏱️ 总工时换算 — 需要将“出勤天数”或“打卡时间”换算成小时，处理早退、迟到等异常情况
 
-上传 MonlyattendanceInfo_20250731060314.zip
+🌴 休假种类解析：
 
-绑定你的数据源（如 SharePoint、Outlook、Excel 文件等）
+需要区分各种类型的休假（如带薪休假、病假、特休等）
 
-配置邮件收件人字段为动态员工邮箱
+每种休假记录以小时为单位，需要换算为天（按规则四舍五入，如 4 小时 = 0.5 天）
 
-2. 配置计划触发器
-建议设置为：每月1日早上9:00自动运行
+🗃️ 多个数据源整合 — 各个 SharePoint 表字段命名、结构不同，需统一合并
 
-可根据需要自定义频率（如：双周一次、每月最后一个工作日等）
+🔐 权限处理 — 需要流程对多个 SharePoint 列表有读取权限
 
-3. 预览邮件格式（示例）：
-diff
-Copy
-Edit
-主题：您本月的出勤情况
+🚀 使用方式
+导入 MonlyattendanceInfo_*.zip 文件
 
-亲爱的张三，您好！
+重新连接你的 SharePoint 数据源
 
-以下是您2024年7月的出勤概况：
-- 出勤天数：20天
-- 迟到次数：2次
-- 缺勤天数：1天
+设定每月 3 日运行
 
-如有疑问请联系HR部门。
-🌐 技术栈与平台
-技术	用途
-Power Automate	流程自动化
-Outlook 连接器	发送邮件
-SharePoint / Excel / Dataverse	考勤数据来源（可配置）
+输出可为 Excel Online 文件、Dataverse 表，或 SharePoint 目标列表
 
-📦 文件结构说明
-python
-Copy
-Edit
-Flow/
-├── MonlyattendanceInfo_20250731060314.zip   # Flow 导出文件
-└── README.md                                # 项目说明文档（本文件）
-📈 项目亮点
-无需编码，基于图形化操作构建
+--------------------------------------------------------------------------------
 
-实现定时邮件通知，自动化 HR 流程
+日本語 | MonlyattendanceInfo 勤怠集計フロー
+📌 フロータイプ
+スケジュール型クラウドフロー — 毎月 3日 に実行
 
-易于迁移至其他环境（导出/导入即可）
+📋 説明
+この Power Automate フローは、複数の SharePoint リスト から従業員の出勤データを自動収集し、HR・給与計算向けの月次勤怠サマリーを作成します。
 
-🧠 项目反思（可选，用于加分）
-目前是静态邮件模板，后续可接入 Power Apps 表单实现自定义请假/补签等操作
+📊 出力項目
+名前
 
-可扩展支持生成 PDF 附件发送给员工作为记录
+総工時
+
+週末残業時間
+
+定期券費用
+
+定期区間情報
+
+休暇種別
+
+休暇日数
+
+⚙️ 主な機能
+SharePoint リストから自動取得・集計
+
+毎日の勤務データを 時間単位で換算
+
+休暇の種類を明確化し、時間 → 日数の換算（例：4時間→0.5日）
+
+HR 向けにレポートとして出力
+
+⚠️ 課題点
+⏱️ 工時換算の精度 — 勤務日数・時間を正確に合算（早退・遅刻も考慮）
+
+🌴 休暇の処理：
+
+休暇の種類を判別（有給、病欠、特別休暇など）
+
+時間を日数に変換（0.5日の四捨五入処理を含む）
+
+🗃️ 複数リスト統合 — 異なるリストの構造・項目名の統一
+
+🔐 アクセス設定 — すべてのリストにアクセスする権限が必要
+
+🚀 利用手順
+Flow の zip ファイル（MonlyattendanceInfo_*.zip）をインポート
+
+データソース（SharePoint）を再接続
+
+スケジュールを毎月3日に設定
+
+出力ファイルは Excel、Dataverse、または SharePoint リストに保存可能
+
