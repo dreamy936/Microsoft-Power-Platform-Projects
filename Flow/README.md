@@ -1,4 +1,5 @@
 -----English Introduction-------
+
 📌 Flow Name: MonlyAttendanceInfo
 📋 Project Overview
 This is a Microsoft Power Automate Flow designed to automatically notify employees of their monthly attendance summary via email. It helps streamline HR communication and improve transparency in attendance management.
@@ -77,6 +78,7 @@ Can be integrated with Power Apps to allow employees to apply for leave or view 
 
 
 ------中文简介-------
+
 📌 Flow 名称：MonlyAttendanceInfo
 📋 项目简介
 本 Flow 为 Microsoft Power Automate 上开发的自动化流程，旨在每月自动向员工发送个人出勤记录通知，帮助员工及时了解自己的出勤情况，提高人事沟通效率。
