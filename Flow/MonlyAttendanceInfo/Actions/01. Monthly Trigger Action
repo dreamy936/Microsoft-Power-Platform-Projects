@@ -1,14 +1,33 @@
-### 🔄 Trigger Setting: Every 3rd of the Month
+Flow Type
+Scheduled 
 
-```json
+---- 🔄 Trigger Setting 🔄-----
+Action Name
+Run every 3rd of the Month
+
+Intercal
+1
+
+Frequency
+Month
+
+Time zone
+(UTC+09:00) Osaka, Sapporo, Tokyo
+
+Start time
+2025-02-03T00:00:00Z
+
+
+----👇PEAK CODE👇-----
 {
-  "recurrence": {
-    "frequency": "Month",
-    "interval": 1,
-    "timeZone": "Tokyo Standard Time",
-    "startTime": "2025-02-03T00:00:00Z"
-  },
-  "metadata": {
-    "operationMetadataId": "2dd5c7a3-4535-45f4-8651-ab53558fc334"
-  }
+    "recurrence": {
+        "frequency": "Month",
+        "interval": 1,
+        "timeZone": "Tokyo Standard Time",
+        "startTime": "2025-02-03T00:00:00Z"
+    },
+    "metadata": {
+        "operationMetadataId": "2dd5c7a3-4535-45f4-8651-ab53558fc334"
+    }
 }
+
