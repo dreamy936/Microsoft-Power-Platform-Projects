@@ -1,0 +1,26 @@
+*Site Address
+LYTech社内プロジェクト - https://jplytech.sharepoint.com/sites/CompanyApp
+
+*List Name
+ユーザーロール
+
+
+
+----👇Peak Code-----
+{
+    "inputs": {
+        "host": {
+            "connectionName": "shared_sharepointonline",
+            "operationId": "GetItems",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+        },
+        "parameters": {
+            "dataset": "https://jplytech.sharepoint.com/sites/CompanyApp",
+            "table": "1ca21c59-be75-49b5-a526-8367296bb594"
+        },
+        "authentication": "@parameters('$authentication')"
+    },
+    "metadata": {
+        "operationMetadataId": "349a20e6-4a79-4b4f-8d6c-ed030e0b7a27"
+    }
+}
